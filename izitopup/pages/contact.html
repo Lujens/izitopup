@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Kontakte nou — IziTopUp</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <style>
+    .contact-layout{max-width:900px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 1.4fr;gap:3rem}
+    .contact-info h2{font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;margin-bottom:0.75rem}
+    .contact-info p{color:var(--slate);font-size:0.85rem;line-height:1.75;margin-bottom:1.5rem}
+    .contact-channel{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:1rem 1.25rem;margin-bottom:0.75rem;display:flex;align-items:center;gap:1rem;text-decoration:none;transition:border-color 0.2s}
+    .contact-channel:hover{border-color:var(--border2)}
+    .ch-icon{font-size:1.3rem}
+    .ch-name{font-size:0.85rem;font-weight:500;color:var(--white)}
+    .ch-sub{font-size:0.73rem;color:var(--slate)}
+    .form-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.75rem}
+    .form-card h3{font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:1.25rem}
+    .success-msg{display:none;text-align:center;padding:2rem}
+    .success-msg.show{display:block}
+    @media(max-width:650px){.contact-layout{grid-template-columns:1fr;gap:2rem}}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">IZI<span>TopUp</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#shop">Achte</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="../index.html" class="btn-ghost">← Retounen</a>
+      <a href="../index.html#shop" class="btn-nav">Achte</a>
+    </div>
+  </div>
+</nav>
+
+<div class="contact-layout">
+  <div class="contact-info">
+    <p class="section-eyebrow" style="margin-bottom:0.75rem">Sipò</p>
+    <h2>Kijan nou ka ede ou?</h2>
+    <p>Ekip sipò nou an disponib 7j/7 pou reponn kesyon ou yo ak rezoud pwoblèm ou yo rapidman.</p>
+
+    <a href="https://wa.me/50999999999" class="contact-channel" target="_blank">
+      <span class="ch-icon">💬</span>
+      <div><div class="ch-name">WhatsApp</div><div class="ch-sub">Repons rapid · 8am–10pm</div></div>
+    </a>
+    <a href="mailto:support@izitopup.com" class="contact-channel">
+      <span class="ch-icon">📧</span>
+      <div><div class="ch-name">Email</div><div class="ch-sub">support@izitopup.com · Repons nan 24h</div></div>
+    </a>
+    <a href="https://t.me/izitopup" class="contact-channel" target="_blank">
+      <span class="ch-icon">📱</span>
+      <div><div class="ch-name">Telegram</div><div class="ch-sub">@IziTopUp · Repons rapid</div></div>
+    </a>
+    <a href="#" class="contact-channel">
+      <span class="ch-icon">📘</span>
+      <div><div class="ch-name">Facebook</div><div class="ch-sub">@IziTopUpHT · Mesaj dirèk</div></div>
+    </a>
+
+    <div style="margin-top:1.5rem;padding:1rem;background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.2);border-radius:10px">
+      <p style="font-size:0.78rem;color:var(--slate);line-height:1.6">💡 <strong style="color:var(--light)">Conseil:</strong> Pou pwoblèm kòmand, toujou gen nimewo kòmand ou (#IZI-XXXXX) prè — sa ap ede nou rezoud pwoblèm ou pi vit.</p>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <h3>Voye yon mesaj</h3>
+    <div id="formArea">
+      <div class="form-group">
+        <label class="form-label">Non ou</label>
+        <input class="form-input" type="text" placeholder="Prenon ak Siyati">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="ou@email.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Nimewo kòmand (si aplikab)</label>
+        <input class="form-input" type="text" placeholder="#IZI-00000">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Sijè</label>
+        <select class="form-select">
+          <option value="">Chwazi yon sijè...</option>
+          <option>Pwoblèm ak kòd mwen</option>
+          <option>Kòmand pa livre</option>
+          <option>Pwoblèm peman</option>
+          <option>Kesyon sou pwodwi</option>
+          <option>Remaksman / Reklamasyon</option>
+          <option>Lòt</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Mesaj ou</label>
+        <textarea class="form-input" rows="4" placeholder="Eksplike pwoblèm ou oswa kesyon ou an..." style="resize:vertical"></textarea>
+      </div>
+      <button class="btn-full btn-mint" onclick="submitForm()">Voye mesaj →</button>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <div style="font-size:2.5rem;margin-bottom:1rem">✅</div>
+      <h3 style="font-family:'Rajdhani',sans-serif;margin-bottom:0.5rem">Mesaj ou resevwa!</h3>
+      <p style="color:var(--slate);font-size:0.83rem">Nou pral reponn ou nan mwens ke 24 èdtan. Tcheke email ou an.</p>
+      <a href="../index.html#shop" class="btn-outline" style="display:inline-flex;margin-top:1.25rem;text-decoration:none;padding:0.65rem 1.25rem">← Retounen nan boutik</a>
+    </div>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+<script>
+function submitForm() {
+  document.getElementById("formArea").style.display = "none";
+  document.getElementById("successMsg").classList.add("show");
+}
+</script>
+</body>
+</html>

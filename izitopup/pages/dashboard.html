@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Dashboard — IziTopUp</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <style>
+    .dash-layout{display:grid;grid-template-columns:240px 1fr;gap:0;min-height:calc(100vh - 64px)}
+    .sidebar{background:var(--navy2);border-right:1px solid var(--border);padding:1.5rem 1rem}
+    .sidebar-user{text-align:center;padding:1rem;margin-bottom:1rem;border-bottom:1px solid var(--border)}
+    .avatar{width:60px;height:60px;border-radius:50%;background:rgba(37,99,235,0.2);border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:var(--blue);margin:0 auto 0.75rem}
+    .username{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:600;color:var(--white)}
+    .user-email{font-size:0.72rem;color:var(--slate)}
+    .sidebar-nav a{display:flex;align-items:center;gap:0.6rem;color:var(--slate);text-decoration:none;padding:0.65rem 0.85rem;border-radius:8px;font-size:0.83rem;margin-bottom:0.15rem;transition:all 0.2s}
+    .sidebar-nav a:hover{color:var(--light);background:rgba(255,255,255,0.05)}
+    .sidebar-nav a.active{color:var(--mint);background:rgba(0,200,150,0.1)}
+    .sidebar-nav a span{font-size:1rem}
+    .dash-main{padding:2rem;background:var(--navy)}
+    .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:2rem}
+    .stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem}
+    .stat-label{font-size:0.72rem;color:var(--slate);margin-bottom:0.4rem}
+    .stat-value{font-family:'Rajdhani',sans-serif;font-size:1.6rem;font-weight:700;color:var(--white)}
+    .stat-sub{font-size:0.7rem;color:var(--mint);margin-top:0.2rem}
+    .dash-section{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:1.5rem;overflow:hidden}
+    .dash-section-header{padding:1rem 1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+    .dash-section-title{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:600;color:var(--white)}
+    .orders-table{width:100%;border-collapse:collapse}
+    .orders-table th{font-size:0.72rem;color:var(--slate);text-align:left;padding:0.75rem 1.25rem;border-bottom:1px solid var(--border);font-weight:500}
+    .orders-table td{font-size:0.82rem;color:var(--light);padding:0.9rem 1.25rem;border-bottom:1px solid var(--border)}
+    .orders-table tr:last-child td{border-bottom:none}
+    .orders-table tr:hover td{background:rgba(255,255,255,0.02)}
+    .status-pill{font-size:0.65rem;font-weight:600;padding:3px 8px;border-radius:5px;text-transform:uppercase;letter-spacing:0.5px}
+    .status-livre{background:rgba(0,200,150,0.12);color:var(--mint);border:1px solid rgba(0,200,150,0.2)}
+    .status-atant{background:rgba(246,173,85,0.12);color:var(--gold);border:1px solid rgba(246,173,85,0.2)}
+    .status-echwe{background:rgba(229,62,62,0.12);color:#FC8181;border:1px solid rgba(229,62,62,0.2)}
+    .ref-card{padding:1.25rem;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center}
+    .ref-link-box{background:var(--navy2);border:1px solid var(--border2);border-radius:8px;padding:0.6rem 1rem;font-size:0.8rem;color:var(--mint);font-family:monospace;display:flex;justify-content:space-between;align-items:center}
+    .wallet-card{padding:1.5rem;display:flex;align-items:center;gap:1.5rem}
+    .wallet-balance{font-family:'Rajdhani',sans-serif;font-size:2.5rem;font-weight:700;color:var(--white)}
+    .wallet-unit{font-size:0.75rem;color:var(--slate)}
+    .btn-sm{padding:0.4rem 0.875rem;border-radius:7px;font-size:0.78rem;font-weight:600;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-flex;align-items:center;gap:0.3rem}
+    .btn-sm-mint{background:rgba(0,200,150,0.12);color:var(--mint);border:1px solid rgba(0,200,150,0.25)}
+    .btn-sm-mint:hover{background:var(--mint);color:#0A0E1A}
+    @media(max-width:768px){.dash-layout{grid-template-columns:1fr}.sidebar{display:none}}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">IZI<span>TopUp</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#shop">Boutik</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="../index.html" class="btn-ghost">← Retounen</a>
+      <a href="../index.html" class="btn-nav">Achte</a>
+    </div>
+  </div>
+</nav>
+
+<div class="dash-layout">
+  <aside class="sidebar">
+    <div class="sidebar-user">
+      <div class="avatar">LP</div>
+      <div class="username">Lujens Pierre</div>
+      <div class="user-email">lujens@email.com</div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="active"><span>📊</span> Dashboard</a>
+      <a href="#"><span>🛍️</span> Kòmand mwen</a>
+      <a href="#"><span>💎</span> Kòd mwen</a>
+      <a href="#"><span>💰</span> Wallet mwen</a>
+      <a href="#"><span>🎁</span> Referans mwen</a>
+      <a href="#"><span>⚙️</span> Pwofil</a>
+      <a href="#" style="color:#FC8181;margin-top:1rem"><span>🚪</span> Dekonekte</a>
+    </nav>
+  </aside>
+
+  <main class="dash-main">
+    <h2 style="font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">Bon jwèt, Lujens! 🎮</h2>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">Total kòmand</div>
+        <div class="stat-value">12</div>
+        <div class="stat-sub">+3 mwa pase</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Total depanse</div>
+        <div class="stat-value">4,250</div>
+        <div class="stat-sub">HTG sou 3 mwa</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Pwen referans</div>
+        <div class="stat-value">350</div>
+        <div class="stat-sub">≈ 175 HTG rabè</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Zanmi refere</div>
+        <div class="stat-value">5</div>
+        <div class="stat-sub">2 aktif</div>
+      </div>
+    </div>
+
+    <!-- Wallet -->
+    <div class="dash-section" style="margin-bottom:1.5rem">
+      <div class="dash-section-header">
+        <span class="dash-section-title">💰 Wallet mwen</span>
+        <a href="#" class="btn-sm btn-sm-mint">Ajoute kredi</a>
+      </div>
+      <div class="wallet-card">
+        <div>
+          <div class="wallet-unit">Balans disponib</div>
+          <div class="wallet-balance">175 <span style="font-size:1rem;color:var(--slate)">HTG</span></div>
+          <div style="font-size:0.75rem;color:var(--slate);margin-top:0.25rem">Egal ak 350 pwen referans konvèti</div>
+        </div>
+        <a href="../index.html#shop" class="btn-primary" style="padding:0.65rem 1.25rem;font-size:0.85rem">Itilize pou achte →</a>
+      </div>
+    </div>
+
+    <!-- Recent Orders -->
+    <div class="dash-section">
+      <div class="dash-section-header">
+        <span class="dash-section-title">Dènye kòmand yo</span>
+        <a href="#" class="btn-sm btn-sm-mint">Wè tout →</a>
+      </div>
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>Kòmand</th>
+            <th>Pwodwi</th>
+            <th>Peman</th>
+            <th>Pri</th>
+            <th>Estati</th>
+            <th>Kòd</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="color:var(--slate)">#IZI-00012</td>
+            <td>🔥 Free Fire · 1060 Diamonds</td>
+            <td>MonCash</td>
+            <td>420 HTG</td>
+            <td><span class="status-pill status-livre">Livre</span></td>
+            <td><code style="background:var(--navy2);padding:2px 6px;border-radius:4px;font-size:0.75rem;color:var(--mint)">A4X2-B8K1-...</code></td>
+          </tr>
+          <tr>
+            <td style="color:var(--slate)">#IZI-00011</td>
+            <td>⚔️ PUBG Mobile · 600 UC</td>
+            <td>NatCash</td>
+            <td>490 HTG</td>
+            <td><span class="status-pill status-livre">Livre</span></td>
+            <td><code style="background:var(--navy2);padding:2px 6px;border-radius:4px;font-size:0.75rem;color:var(--mint)">P9Z3-C7W4-...</code></td>
+          </tr>
+          <tr>
+            <td style="color:var(--slate)">#IZI-00010</td>
+            <td>🎮 Steam · $10 Gift Card</td>
+            <td>Kàt</td>
+            <td>1,280 HTG</td>
+            <td><span class="status-pill status-livre">Livre</span></td>
+            <td><code style="background:var(--navy2);padding:2px 6px;border-radius:4px;font-size:0.75rem;color:var(--mint)">ST8K-L2M9-...</code></td>
+          </tr>
+          <tr>
+            <td style="color:var(--slate)">#IZI-00009</td>
+            <td>🔥 Free Fire · 310 Diamonds</td>
+            <td>MonCash</td>
+            <td>130 HTG</td>
+            <td><span class="status-pill status-livre">Livre</span></td>
+            <td><code style="background:var(--navy2);padding:2px 6px;border-radius:4px;font-size:0.75rem;color:var(--mint)">FF2J-N5R7-...</code></td>
+          </tr>
+          <tr>
+            <td style="color:var(--slate)">#IZI-00008</td>
+            <td>🎯 Fortnite · 1000 V-Bucks</td>
+            <td>Kàt</td>
+            <td>850 HTG</td>
+            <td><span class="status-pill status-echwe">Echwe</span></td>
+            <td style="color:var(--slate)">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Referral -->
+    <div class="dash-section">
+      <div class="dash-section-header">
+        <span class="dash-section-title">🎁 Lyen referans ou</span>
+        <span style="font-size:0.75rem;color:var(--slate)">5 zanmi envite · 350 pwen touche</span>
+      </div>
+      <div class="ref-card">
+        <div>
+          <p style="font-size:0.8rem;color:var(--slate);margin-bottom:0.75rem">Pataje lyen sa a. Chak fwa yon zanmi enskri epi achte, ou touche 50 pwen (= 25 HTG rabè).</p>
+          <div class="ref-link-box">
+            <span>izitopup.com/ref/LUJENS2025</span>
+            <button onclick="navigator.clipboard.writeText('https://izitopup.com/ref/LUJENS2025')" style="background:rgba(0,200,150,0.1);border:1px solid rgba(0,200,150,0.2);color:var(--mint);padding:3px 8px;border-radius:5px;font-size:0.7rem;cursor:pointer">Kopye</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  document.querySelectorAll(".sidebar-nav a:not(.active)").forEach(a => {
+    a.addEventListener("click", e => {
+      if(!a.href.includes("#")) return;
+      e.preventDefault();
+      document.querySelectorAll(".sidebar-nav a").forEach(x=>x.classList.remove("active"));
+      a.classList.add("active");
+    });
+  });
+</script>
+</body>
+</html>

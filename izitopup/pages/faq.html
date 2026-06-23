@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>FAQ — IziTopUp</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <style>
+    .faq-hero{padding:3rem 2rem;text-align:center;border-bottom:1px solid var(--border)}
+    .faq-inner{max-width:720px;margin:0 auto;padding:3rem 2rem}
+    .faq-cat{margin-bottom:2.5rem}
+    .faq-cat-title{font-family:'Rajdhani',sans-serif;font-size:0.8rem;font-weight:600;color:var(--mint);letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border)}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:0.6rem;overflow:hidden}
+    .faq-q{width:100%;background:var(--card);border:none;color:var(--light);text-align:left;padding:1rem 1.25rem;font-size:0.88rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Inter',sans-serif;transition:background 0.2s}
+    .faq-q:hover{background:var(--card2)}
+    .faq-q.open{color:var(--mint)}
+    .faq-q .arrow{font-size:0.75rem;transition:transform 0.2s;color:var(--slate)}
+    .faq-q.open .arrow{transform:rotate(180deg)}
+    .faq-a{background:var(--navy2);padding:0 1.25rem;max-height:0;overflow:hidden;transition:all 0.3s;font-size:0.83rem;color:var(--slate);line-height:1.75}
+    .faq-a.open{max-height:300px;padding:1rem 1.25rem}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">IZI<span>TopUp</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#shop">Achte</a></li>
+      <li><a href="contact.html">Kontakte nou</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="../index.html" class="btn-ghost">← Retounen</a>
+      <a href="#" onclick="history.back()" class="btn-nav">Achte</a>
+    </div>
+  </div>
+</nav>
+
+<div class="faq-hero">
+  <p class="section-eyebrow" style="margin-bottom:0.75rem">Èd</p>
+  <h1 style="font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700">Kesyon yo poze souvan</h1>
+  <p style="color:var(--slate);font-size:0.88rem;margin-top:0.5rem">Pa jwenn repons ou a? <a href="contact.html" style="color:var(--mint)">Kontakte nou dirèkteman.</a></p>
+</div>
+
+<div class="faq-inner">
+  <div class="faq-cat">
+    <div class="faq-cat-title">🎮 Pwodwi & Livrezon</div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Kòman livrezon kòd la mache? <span class="arrow">▼</span></button>
+      <div class="faq-a">Apre peman konfime, sistèm nan otomatikman pran yon kòd disponib nan stock la epi voye li nan email ou. Li parèt tou sou ekran an touswit apre peman an. Pa gen atant, pa gen entèmedyè.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Konbyen tan pou mwen resevwa kòd la? <span class="arrow">▼</span></button>
+      <div class="faq-a">Livrezon se otomatik — an jeneral mwens ke 60 segonn apre peman konfime. Si ou pa resevwa li apre 5 minit, tcheke dosye spam email ou oswa wè kòd la nan dashboard ou.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Kisa ki pase si kòd la pa mache? <span class="arrow">▼</span></button>
+      <div class="faq-a">Si kòd la pa fonksyonèl, kontakte sipò nou an ak nimewo kòmand ou ak yon screenshot. Nou pral verifye epi bay yon lòt kòd oswa ranbouse ou san pwoblèm.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Eske mwen ka wè kòd mwen achte yo ankò? <span class="arrow">▼</span></button>
+      <div class="faq-a">Wi! Tout kòd ou resevwa yo sove nan dashboard ou sou kont ou. Ou ka wè yo nenpòt ki lè, menmsi ou bliye kopye yo nan premye fwa a.</div>
+    </div>
+  </div>
+
+  <div class="faq-cat">
+    <div class="faq-cat-title">💳 Peman</div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Ki metòd peman nou aksepte? <span class="arrow">▼</span></button>
+      <div class="faq-a">Nou aksepte MonCash (Digicel), NatCash (Natcom), ak kàt kredi/debi Visa ak Mastercard. Tout peman yo chiffre ak SSL 256-bit.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Peman mwen echwe — kisa pou mwen fè? <span class="arrow">▼</span></button>
+      <div class="faq-a">Si peman ou echwe, kòmand la pa valide epi ou pa debite. Eseye ankò oswa itilize yon lòt metòd peman. Si pwoblèm nan kontinye, kontakte sipò nou an.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Eske gen frè kache sou tranzaksyon yo? <span class="arrow">▼</span></button>
+      <div class="faq-a">Non. Pri ou wè sou sit la se sa w ap peye a. Pa gen frè kache, pa gen frè tranzaksyon anplis. Tout pri yo an HTG.</div>
+    </div>
+  </div>
+
+  <div class="faq-cat">
+    <div class="faq-cat-title">🎁 Referans & Pwen</div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Kijan sistèm referans la mache? <span class="arrow">▼</span></button>
+      <div class="faq-a">Chak kont gen yon lyen referans pèsonèl. Lè yon zanmi enskri ak lyen ou epi fè premye acha li, ou touche 50 pwen. 100 pwen = 50 HTG rabè sou pwochen kòmand ou.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Eske pwen mwen yo ekspire? <span class="arrow">▼</span></button>
+      <div class="faq-a">Pwen yo valid pou 12 mwa depi dat ou touche yo. Asire ou itilize yo avan dat ekspirasyon an.</div>
+    </div>
+  </div>
+
+  <div class="faq-cat">
+    <div class="faq-cat-title">🔒 Kont & Sekirite</div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Kòman pou mwen reset modpas mwen? <span class="arrow">▼</span></button>
+      <div class="faq-a">Klike "Bliye modpas?" sou paj koneksyon an. Antre email ou epi nou pral voye yon lyen reset modpas touswit. Lyen sa a valid pou 30 minit sèlman.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Eske done mwen yo an sekirite? <span class="arrow">▼</span></button>
+      <div class="faq-a">Wi. Nou itilize chiffrement SSL 256-bit pou tout tranzaksyon. Modpas yo stocke nan fòm hash (bcrypt). Nou pa janm sove enfòmasyon kàt ou sou sèvè nou an.</div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-bottom" style="border-top:none;justify-content:center">
+      <p class="footer-copy">© 2025 IziTopUp · <a href="contact.html" style="color:var(--mint);text-decoration:none">Bezwen èd?</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains("open");
+  document.querySelectorAll(".faq-q.open").forEach(b=>{ b.classList.remove("open"); b.nextElementSibling.classList.remove("open"); });
+  if(!isOpen){ btn.classList.add("open"); answer.classList.add("open"); }
+}
+</script>
+</body>
+</html>
