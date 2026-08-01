@@ -1,6 +1,6 @@
 <?php
 // ═══════════════════════════════════════════
-// IziToPop — Database & App Config
+// IziTopUp — Database & App Config
 // Replace DB_* values with your Hostinger credentials
 // ═══════════════════════════════════════════
 
@@ -10,7 +10,7 @@ define('DB_USER',     'u589246572_izitopop');       // e.g. u123456789_iziuser
 define('DB_PASS',     'Bh#&:FCPc$T9');
 define('DB_CHARSET',  'utf8mb4');
 
-define('APP_NAME',    'IziToPop');
+define('APP_NAME',    'IziTopUp');
 define('APP_URL',     'https://izitopop.com');
 define('API_URL',     'https://izitopop.com/api');
 
@@ -26,10 +26,10 @@ define('POINTS_TO_HTG_RATE',    0.5);  // 100 points = 50 HTG
 // Email (SMTP via Brevo/Mailgun)
 define('SMTP_HOST',   'smtp-relay.brevo.com');
 define('SMTP_PORT',   587);
-define('SMTP_USER',   'YOUR_BREVO_EMAIL');
-define('SMTP_PASS',   'YOUR_BREVO_SMTP_KEY');
+define('SMTP_USER',   'admin@izitopop.com');
+define('SMTP_PASS',   'xsmtpsib-bffbaa06fbf56dee2f95a84829c85db47b9eb95f3e8dc1b49bdd66709ec79ec1-EFi9arhmI10fMvby');
 define('MAIL_FROM',   'noreply@izitopop.com');
-define('MAIL_NAME',   'IziToPop');
+define('MAIL_NAME',   'IziTopUp');
 
 // MonCash API (Digicel)
 define('MONCASH_CLIENT_ID',     'YOUR_MONCASH_CLIENT_ID');

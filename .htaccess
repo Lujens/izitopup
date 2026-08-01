@@ -24,3 +24,9 @@ Header always set Referrer-Policy strict-origin-when-cross-origin
     Order Allow,Deny
     Deny from all
 </FilesMatch>
+
+# Block direct access to backend folders
+<DirectoryMatch "^.*(config|middleware|utils|sql).*$">
+  Order Allow,Deny
+  Deny from all
+</DirectoryMatch>
