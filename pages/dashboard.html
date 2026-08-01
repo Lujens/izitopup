@@ -14,7 +14,7 @@
     <ul class="nav-links"><li><a href="../index.html#shop">Boutik</a></li></ul>
     <div class="nav-actions">
       <a href="../index.html" class="btn-ghost-nav">← Retounen</a>
-      <a href="../index.html#shop" class="btn-nav-primary" style="text-decoration:none;display:inline-block">Achte</a>
+      <button class="btn-nav-primary" onclick="doLogout()">Dekonekte</button>
     </div>
   </div>
 </nav>
@@ -22,120 +22,292 @@
 <div class="dash-layout">
   <aside class="sidebar">
     <div class="sidebar-user">
-      <div class="avatar">WP</div>
-      <div class="sidebar-name">Wesley Pierre</div>
-      <div class="sidebar-email">wesley@email.com</div>
+      <div class="avatar" id="sidebarAvatar">?</div>
+      <div class="sidebar-name" id="sidebarName">Chargement...</div>
+      <div class="sidebar-email" id="sidebarEmail"></div>
     </div>
     <nav class="sidebar-nav" style="margin-top:0.75rem">
-      <a href="#" class="active">📊 Dashboard</a>
-      <a href="#">🛍️ Kòmand mwen</a>
-      <a href="#">💎 Bous mwen</a>
-      <a href="#">⭐ Pwen mwen</a>
-      <a href="#">🎁 Referans</a>
-      <a href="#">🔔 Anviwonman</a>
-      <a href="contact.html">💬 De kontakte</a>
-      <a href="../index.html" style="color:var(--red);margin-top:1rem">🚪 Dekonekte</a>
+      <a href="#" class="active" onclick="showSection('overview',this)">📊 Dashboard</a>
+      <a href="#" onclick="showSection('orders',this)">🛍️ Kòmand mwen</a>
+      <a href="#" onclick="showSection('wallet',this)">💰 Wallet mwen</a>
+      <a href="#" onclick="showSection('referrals',this)">🎁 Referans mwen</a>
+      <a href="#" onclick="showSection('profile',this)">⚙️ Pwofil</a>
+      <a href="../pages/contact.html">💬 Sipò</a>
+      <a href="#" onclick="doLogout()" style="color:var(--red);margin-top:1rem">🚪 Dekonekte</a>
     </nav>
   </aside>
 
   <main class="dash-main">
-    <div class="dash-greeting">Bonjou, Wesley! 👋</div>
-    <div class="dash-sub">Men sa k ap pase jodi a.</div>
+    <!-- OVERVIEW -->
+    <div id="section-overview">
+      <div class="dash-greeting" id="greeting">Bonjou! 👋</div>
+      <div class="dash-sub">Men sa k ap pase sou kont ou.</div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-value" id="statWallet">$0.00</div>
+          <div class="stat-label">Wallet mwen</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-value" id="statPoints">0</div>
+          <div class="stat-label">Pwen mwen</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🛍️</div>
+          <div class="stat-value" id="statOrders">0</div>
+          <div class="stat-label">Kòmand total</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎁</div>
+          <div class="stat-value" id="statReferrals">0</div>
+          <div class="stat-label">Referans fèt</div>
+        </div>
+      </div>
 
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-icon">💰</div>
-        <div class="stat-value">$12.50</div>
-        <div class="stat-label">Bous mwen</div>
-        <div class="stat-trend">↑ +$2.50 semèn sa</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">⭐</div>
-        <div class="stat-value">250</div>
-        <div class="stat-label">Pwen mwen</div>
-        <div class="stat-trend">↑ +50 pwen jodi a</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">🛍️</div>
-        <div class="stat-value">18</div>
-        <div class="stat-label">Kòmand total</div>
-        <div class="stat-trend">↑ +3 mwa sa</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">💳</div>
-        <div class="stat-value">$87.45</div>
-        <div class="stat-label">Total depanse</div>
-        <div class="stat-trend">Sou 3 dènye mwa</div>
-      </div>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.25rem">
-      <!-- Recent Orders -->
-      <div class="dash-card" style="grid-column:1/-1">
+      <!-- Recent orders -->
+      <div class="dash-card">
         <div class="dash-card-header">
           <span class="dash-card-title">Dènye kòmand yo</span>
-          <a href="#" style="font-size:0.78rem;color:var(--purple);font-weight:600">Wè tout →</a>
+          <a href="#" onclick="showSection('orders',null);return false;" style="font-size:0.78rem;color:var(--purple);font-weight:600">Wè tout →</a>
         </div>
-        <table class="orders-table">
-          <thead><tr>
-            <th>Jwèt</th><th>Pake</th><th>Metòd</th><th>Pri</th><th>Estati</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td><div class="game-cell"><div class="game-cell-thumb"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1rgi.jpg" onerror="this.parentElement.textContent='🔥'"></div>Free Fire</div></td>
-              <td>520 Dyaman</td><td>MonCash</td><td>$4.99</td>
-              <td><span class="status-pill status-livre">Livre</span></td>
-            </tr>
-            <tr>
-              <td><div class="game-cell"><div class="game-cell-thumb"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1wkb.jpg" onerror="this.parentElement.textContent='🎯'"></div>PUBG Mobile</div></td>
-              <td>60 UC</td><td>NatCash</td><td>$0.99</td>
-              <td><span class="status-pill status-livre">Livre</span></td>
-            </tr>
-            <tr>
-              <td><div class="game-cell"><div class="game-cell-thumb"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1ycw.jpg" onerror="this.parentElement.textContent='🏰'"></div>Clash of Clans</div></td>
-              <td>$10 Pack</td><td>Kàt</td><td>$10.99</td>
-              <td><span class="status-pill status-livre">Livre</span></td>
-            </tr>
-            <tr>
-              <td><div class="game-cell"><div class="game-cell-thumb">🎮</div>Steam</div></td>
-              <td>$10 Gift Card</td><td>Kàt</td><td>$10.99</td>
-              <td><span class="status-pill status-livre">Livre</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <div id="recentOrdersWrap">
+          <div style="padding:2rem;text-align:center;color:var(--muted);font-size:0.85rem">Ap chaje...</div>
+        </div>
+      </div>
+
+      <!-- Referral link -->
+      <div class="dash-card">
+        <div class="dash-card-header"><span class="dash-card-title">🎁 Lyen referans ou</span></div>
+        <div style="padding:1.25rem">
+          <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.875rem">Pataje lyen sa a. Chak zanmi ki enskri epi achte, ou touche pwen!</p>
+          <div class="ref-link-card">
+            <div class="ref-link-url" id="refLink">Chargement...</div>
+            <button onclick="copyRef()" style="background:var(--purple);color:#fff;border:none;padding:0.45rem 1rem;border-radius:8px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap">Kopye</button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Referral -->
-    <div class="dash-card">
-      <div class="dash-card-header">
-        <span class="dash-card-title">🎁 Referans mwen</span>
-        <span style="font-size:0.75rem;color:var(--muted)">12 envite · 7 acha · 250 pwen touche</span>
-      </div>
-      <div style="padding:1.25rem">
-        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.875rem">Pataje lyen ou epi touche pwen pou chak zanmi ki enskri epi achte.</p>
-        <div class="ref-link-card">
-          <div class="ref-link-url">https://izitopop.ht/ref/wesley</div>
-          <button onclick="navigator.clipboard.writeText('https://izitopop.ht/ref/wesley')" style="background:var(--purple);color:#fff;border:none;padding:0.45rem 1rem;border-radius:8px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap">Kopye</button>
+    <!-- ORDERS -->
+    <div id="section-orders" style="display:none">
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.25rem;margin-bottom:1.5rem">Tout kòmand mwen</h2>
+      <div class="dash-card">
+        <div id="allOrdersWrap">
+          <div style="padding:2rem;text-align:center;color:var(--muted);font-size:0.85rem">Ap chaje...</div>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem">
-          <div style="text-align:center;padding:0.875rem;background:var(--bg);border-radius:10px">
-            <div style="font-weight:800;font-size:1.3rem;color:var(--text)">12</div>
-            <div style="font-size:0.72rem;color:var(--muted)">Zanmi envite</div>
+      </div>
+    </div>
+
+    <!-- WALLET -->
+    <div id="section-wallet" style="display:none">
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.25rem;margin-bottom:1.5rem">Wallet mwen</h2>
+      <div class="dash-card" style="margin-bottom:1.25rem">
+        <div style="padding:1.5rem;display:flex;align-items:center;gap:1.5rem">
+          <div>
+            <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.3rem">Balans disponib</div>
+            <div style="font-size:2.5rem;font-weight:800;color:var(--text)" id="walletBalance">$0.00</div>
           </div>
-          <div style="text-align:center;padding:0.875rem;background:var(--bg);border-radius:10px">
-            <div style="font-weight:800;font-size:1.3rem;color:var(--text)">7</div>
-            <div style="font-size:0.72rem;color:var(--muted)">Acha konplète</div>
+          <a href="../index.html#shop" class="btn-primary" style="margin-left:auto">🎮 Itilize pou achte</a>
+        </div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-header"><span class="dash-card-title">Istwa tranzaksyon</span></div>
+        <div id="walletTxWrap"><div style="padding:2rem;text-align:center;color:var(--muted);font-size:0.85rem">Ap chaje...</div></div>
+      </div>
+    </div>
+
+    <!-- REFERRALS -->
+    <div id="section-referrals" style="display:none">
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.25rem;margin-bottom:1.5rem">Referans mwen</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.25rem">
+        <div class="stat-card"><div class="stat-icon">👥</div><div class="stat-value" id="refTotal">0</div><div class="stat-label">Total envite</div></div>
+        <div class="stat-card"><div class="stat-icon">✅</div><div class="stat-value" id="refCompleted">0</div><div class="stat-label">Acha konplète</div></div>
+        <div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value" id="refPoints">0</div><div class="stat-label">Pwen touche</div></div>
+      </div>
+      <div class="dash-card" style="margin-bottom:1.25rem">
+        <div class="dash-card-header"><span class="dash-card-title">Lyen referans ou</span></div>
+        <div style="padding:1.25rem">
+          <div class="ref-link-card">
+            <div class="ref-link-url" id="refLink2">Chargement...</div>
+            <button onclick="copyRef()" style="background:var(--purple);color:#fff;border:none;padding:0.45rem 1rem;border-radius:8px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">Kopye</button>
           </div>
-          <div style="text-align:center;padding:0.875rem;background:var(--bg);border-radius:10px">
-            <div style="font-weight:800;font-size:1.3rem;color:var(--purple)">250</div>
-            <div style="font-size:0.72rem;color:var(--muted)">Pwen touche</div>
+        </div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-header"><span class="dash-card-title">Istwa referans yo</span></div>
+        <div id="refListWrap"><div style="padding:2rem;text-align:center;color:var(--muted);font-size:0.85rem">Ap chaje...</div></div>
+      </div>
+    </div>
+
+    <!-- PROFILE -->
+    <div id="section-profile" style="display:none">
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.25rem;margin-bottom:1.5rem">Pwofil mwen</h2>
+      <div class="dash-card">
+        <div style="padding:1.5rem">
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Non</label><input class="form-input" id="pfFirstName" type="text"></div>
+            <div class="form-group"><label class="form-label">Siyati</label><input class="form-input" id="pfLastName" type="text"></div>
           </div>
+          <div class="form-group"><label class="form-label">Email</label><input class="form-input" id="pfEmail" type="email" disabled style="opacity:0.6;cursor:not-allowed"></div>
+          <div class="form-group"><label class="form-label">Telefòn</label><input class="form-input" id="pfPhone" type="tel"></div>
+          <button class="btn-primary" onclick="saveProfile()">Sove chanjman yo</button>
         </div>
       </div>
     </div>
   </main>
 </div>
-<script src="../js/main.js"></script>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><span id="toastIcon">✅</span><span class="toast-text" id="toastText"></span></div>
+
+<script>
+const TOKEN = localStorage.getItem('izitopop_token');
+const USER  = JSON.parse(localStorage.getItem('izitopop_user') || 'null');
+
+// Redirect if not logged in
+if(!TOKEN) { window.location.href = '../index.html'; }
+
+function showToast(icon,msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toastIcon').textContent=icon;
+  document.getElementById('toastText').textContent=msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3500);
+}
+
+function authFetch(url, opts={}) {
+  return fetch(url, { ...opts, headers: { 'Content-Type':'application/json', 'Authorization':'Bearer '+TOKEN, ...(opts.headers||{}) } }).then(r=>r.json());
+}
+
+// ── INIT ──
+async function init() {
+  // Set sidebar from cached user first
+  if(USER) {
+    document.getElementById('sidebarAvatar').textContent = USER.first_name?.[0]?.toUpperCase()||'?';
+    document.getElementById('sidebarName').textContent   = USER.first_name + ' ' + (USER.last_name||'');
+    document.getElementById('sidebarEmail').textContent  = USER.email||'';
+    document.getElementById('greeting').textContent      = 'Bonjou, '+USER.first_name+'! 👋';
+    document.getElementById('statWallet').textContent    = '$'+(parseFloat(USER.wallet_balance)||0).toFixed(2);
+    document.getElementById('statPoints').textContent    = USER.points||0;
+  }
+
+  // Load fresh data
+  try {
+    const [profileData, ordersData, refData] = await Promise.all([
+      authFetch('/api/referrals/index.php?action=profile'),
+      authFetch('/api/orders/index.php?action=list'),
+      authFetch('/api/referrals/index.php?action=stats'),
+    ]);
+
+    if(profileData.success) {
+      const u = profileData.data.user;
+      document.getElementById('sidebarAvatar').textContent = u.first_name?.[0]?.toUpperCase()||'?';
+      document.getElementById('sidebarName').textContent   = u.first_name+' '+u.last_name;
+      document.getElementById('sidebarEmail').textContent  = u.email;
+      document.getElementById('greeting').textContent      = 'Bonjou, '+u.first_name+'! 👋';
+      document.getElementById('statWallet').textContent    = '$'+parseFloat(u.wallet_balance).toFixed(2);
+      document.getElementById('statPoints').textContent    = u.points;
+      document.getElementById('walletBalance').textContent = '$'+parseFloat(u.wallet_balance).toFixed(2);
+      document.getElementById('pfFirstName').value = u.first_name;
+      document.getElementById('pfLastName').value  = u.last_name;
+      document.getElementById('pfEmail').value     = u.email;
+      document.getElementById('pfPhone').value     = u.phone||'';
+      localStorage.setItem('izitopop_user', JSON.stringify(u));
+    }
+
+    if(ordersData.success) {
+      const orders = ordersData.data.orders;
+      document.getElementById('statOrders').textContent = orders.length;
+      renderOrders(orders, 'recentOrdersWrap', 5);
+      renderOrders(orders, 'allOrdersWrap');
+    }
+
+    if(refData.success) {
+      const d = refData.data;
+      document.getElementById('statReferrals').textContent = d.total_referrals||0;
+      document.getElementById('refTotal').textContent      = d.total_referrals||0;
+      document.getElementById('refCompleted').textContent  = d.completed||0;
+      document.getElementById('refPoints').textContent     = d.points||0;
+      document.getElementById('refLink').textContent       = d.referral_link||'';
+      document.getElementById('refLink2').textContent      = d.referral_link||'';
+      window._refLink = d.referral_link;
+      renderRefList(d.referrals||[]);
+    }
+
+  } catch(e) { showToast('❌','Erè chajman done'); }
+}
+
+function renderOrders(orders, containerId, limit=null) {
+  const wrap = document.getElementById(containerId);
+  const list = limit ? orders.slice(0,limit) : orders;
+  if(!list.length) {
+    wrap.innerHTML = `<div style="padding:2rem;text-align:center;color:var(--muted);font-size:0.85rem">
+      Pa gen kòmand ankò. <a href="../index.html#shop" style="color:var(--purple);font-weight:600">Achte premye a →</a></div>`;
+    return;
+  }
+  wrap.innerHTML = `<table class="orders-table">
+    <thead><tr><th>Kòmand</th><th>Pwodwi</th><th>Pri</th><th>Peman</th><th>Estati</th><th>Kòd</th></tr></thead>
+    <tbody>${list.map(o=>`<tr>
+      <td style="color:var(--muted);font-size:0.75rem">${o.order_number}</td>
+      <td><div class="game-cell"><div class="game-cell-thumb">${getGameIcon(o.product_name)}</div>${o.product_name} · ${o.package_label}</div></td>
+      <td>$${parseFloat(o.price_usd).toFixed(2)}</td>
+      <td style="text-transform:capitalize">${o.payment_method}</td>
+      <td><span class="status-pill ${o.delivery_status==='delivered'?'status-livre':o.delivery_status==='pending'?'status-atant':'status-echwe'}">${o.delivery_status==='delivered'?'Livre':o.delivery_status==='pending'?'An atant':'Echwe'}</span></td>
+      <td>${o.delivered_code?`<code style="background:var(--bg);padding:2px 6px;border-radius:4px;font-size:0.72rem;color:var(--purple)">${o.delivered_code.substring(0,9)}...</code>`:'<span style="color:var(--muted)">—</span>'}</td>
+    </tr>`).join('')}</tbody></table>`;
+}
+
+function renderRefList(refs) {
+  const wrap = document.getElementById('refListWrap');
+  if(!refs.length){wrap.innerHTML='<div style="padding:2rem;text-align:center;color:var(--muted);font-size:0.85rem">Pa gen referans ankò.</div>';return;}
+  wrap.innerHTML=`<table class="orders-table"><thead><tr><th>Non</th><th>Dat</th><th>Estati</th><th>Pwen</th></tr></thead><tbody>
+    ${refs.map(r=>`<tr>
+      <td>${r.first_name} ${r.last_name}</td>
+      <td style="color:var(--muted);font-size:0.78rem">${new Date(r.joined_at).toLocaleDateString()}</td>
+      <td><span class="status-pill ${r.status==='completed'?'status-livre':'status-atant'}">${r.status==='completed'?'Konplète':'An atant'}</span></td>
+      <td style="color:var(--purple);font-weight:600">${r.points_awarded||0} pwen</td>
+    </tr>`).join('')}</tbody></table>`;
+}
+
+function getGameIcon(name){
+  const icons={'Free Fire':'🔥','PUBG Mobile':'🎯','Clash of Clans':'🏰','Fortnite':'⚡','Mobile Legends':'🌀','Call of Duty':'🔫','Steam':'🎮','PlayStation':'🕹️'};
+  return icons[name]||'🎮';
+}
+
+function showSection(id, el){
+  document.querySelectorAll('[id^="section-"]').forEach(s=>s.style.display='none');
+  document.getElementById('section-'+id).style.display='block';
+  document.querySelectorAll('.sidebar-nav a').forEach(a=>a.classList.remove('active'));
+  if(el) el.classList.add('active');
+}
+
+function copyRef(){
+  const link = window._refLink || document.getElementById('refLink').textContent;
+  navigator.clipboard?.writeText(link).then(()=>showToast('✅','Lyen kopye!')).catch(()=>showToast('📋','Kopye lyen an manyèlman'));
+}
+
+async function saveProfile(){
+  const body = {
+    first_name: document.getElementById('pfFirstName').value.trim(),
+    last_name:  document.getElementById('pfLastName').value.trim(),
+    phone:      document.getElementById('pfPhone').value.trim(),
+  };
+  try {
+    const data = await authFetch('/api/referrals/index.php?action=update-profile',{method:'POST',body:JSON.stringify(body)});
+    if(data.success) showToast('✅','Pwofil aktyalize!');
+    else showToast('❌',data.message);
+  } catch(e){ showToast('❌','Erè sèvè'); }
+}
+
+function doLogout(){
+  fetch('/api/auth/index.php?action=logout',{headers:{'Authorization':'Bearer '+TOKEN}}).catch(()=>{});
+  localStorage.removeItem('izitopop_token');
+  localStorage.removeItem('izitopop_user');
+  window.location.href='../index.html';
+}
+
+init();
+</script>
 </body>
 </html>

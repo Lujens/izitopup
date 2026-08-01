@@ -25,8 +25,8 @@
       <li><a href="pages/contact.html">Sipò</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="#" class="btn-ghost-nav" onclick="openLogin();return false;">Konekte</a>
-      <button class="btn-nav-primary" onclick="openRegister()">Kreye Kont</button>
+      <a href="#" id="navLoginBtn" class="btn-ghost-nav" onclick="openLogin();return false;">Konekte</a>
+      <button id="navAuthBtn" class="btn-nav-primary" onclick="openRegister()">Kreye Kont</button>
       <button class="hamburger" onclick="toggleMenu()">☰</button>
     </div>
   </div>
@@ -389,13 +389,7 @@
       <span class="modal-title">Konekte</span>
       <button class="modal-close" onclick="closeModal('loginModal')">✕</button>
     </div>
-    <div class="modal-body">
-      <div class="social-login" style="margin-bottom:1rem">
-        <button class="social-login-btn">G Google</button>
-        <button class="social-login-btn">f Facebook</button>
-      </div>
-      <div class="divider">oswa</div>
-      <div class="form-group"><label class="form-label">Email oswa nimewo telefòn</label><input class="form-input" type="email" placeholder="ou@email.com"></div>
+    <div class="modal-body"><div class="form-group"><label class="form-label">Email oswa nimewo telefòn</label><input class="form-input" type="email" placeholder="ou@email.com"></div>
       <div class="form-group"><label class="form-label" style="display:flex;justify-content:space-between">Modpas <a href="#" class="form-link" style="font-weight:500;font-size:0.75rem">Bliye modpas?</a></label><input class="form-input" type="password" placeholder="••••••••"></div>
       <button class="btn-full btn-purple" onclick="handleLogin()">Konekte</button>
       <div class="form-footer">Pa gen kont? <a href="#" class="form-link" onclick="openRegister();return false;">Kreye youn gratis</a></div>
@@ -410,13 +404,7 @@
       <span class="modal-title">Kreye kont gratis</span>
       <button class="modal-close" onclick="closeModal('registerModal')">✕</button>
     </div>
-    <div class="modal-body">
-      <div class="social-login" style="margin-bottom:1rem">
-        <button class="social-login-btn">G Google</button>
-        <button class="social-login-btn">f Facebook</button>
-      </div>
-      <div class="divider">oswa</div>
-      <div class="form-row">
+    <div class="modal-body"><div class="form-row">
         <div class="form-group"><label class="form-label">Non</label><input class="form-input" type="text" placeholder="Prenon"></div>
         <div class="form-group"><label class="form-label">Siyati</label><input class="form-input" type="text" placeholder="Siyati"></div>
       </div>
