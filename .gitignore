@@ -1,0 +1,12 @@
+# Never commit these — upload manually to Hostinger
+config/config.php
+utils/email.php
+api/test/
+
+# Environment
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db

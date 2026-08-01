@@ -2,21 +2,20 @@
 require_once __DIR__ . '/../config/config.php';
 
 function sendEmail(string $toEmail, string $toName, string $subject, string $htmlBody): bool {
-    $host    = 'smtp-relay.brevo.com';
-    $port    = 587;
-    $user    = 'admin@izitopop.com';
-    $pass    = 'xsmtpsib-bffbaa06fbf56dee2f95a84829c85db47b9eb95f3e8dc1b49bdd66709ec79ec1-EFi9arhmI10fMvby';
-    $from    = 'admin@izitopop.com';
-    $fromName= 'IziToPop';
+    $host = 'smtp-relay.brevo.com';
+    $port = 587;
+    $user = SMTP_USER;
+    $pass = SMTP_PASS;
+    $from = MAIL_FROM;
+    $fromName = MAIL_NAME;
 
     $socket = fsockopen($host, $port, $errno, $errstr, 15);
     if(!$socket) return false;
 
-    $read = function() use($socket){ return fgets($socket,512); };
-    $send = function($cmd) use($socket){ fwrite($socket,$cmd."\r\n"); };
+    $read = function() use($socket){ return fgets($socket, 512); };
+    $send = function($cmd) use($socket){ fwrite($socket, $cmd."\r\n"); };
 
-    $read(); // 220 greeting
-
+    $read();
     $send('EHLO izitopop.com');
     while(true){ $line=$read(); if(substr($line,3,1)==' ') break; }
 
@@ -53,7 +52,6 @@ function sendEmail(string $toEmail, string $toName, string $subject, string $htm
     $sent = $read();
     $send('QUIT');
     fclose($socket);
-
     return strpos($sent,'250')!==false;
 }
 
@@ -78,7 +76,7 @@ function emailTemplate(string $body): string {
 function emailWelcome(string $email, string $name): void {
     $body = "
       <h2 style='color:#0F172A;margin:0 0 0.5rem'>Byenvini, {$name}! 👋</h2>
-      <p style='color:#6B7280;line-height:1.75;margin:0 0 1rem'>Kont ou a kreye ak siksè sou IziToPop — platfòm top-up gaming #1 pou kominotè Haïtyen an.</p>
+      <p style='color:#6B7280;line-height:1.75;margin:0 0 1rem'>Kont ou a kreye ak siksè sou IziToPop.</p>
       <p style='color:#6B7280;line-height:1.75;margin:0 0 1.5rem'>Achte diamonds Free Fire, UC PUBG, V-Bucks Fortnite — peye ak MonCash oswa NatCash epi resevwa kòd ou an mwens ke 60 segonn.</p>
       <div style='text-align:center'>
         <a href='https://izitopop.com/#shop' style='background:#6C63FF;color:#fff;padding:0.875rem 2rem;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block'>🎮 Kòmanse achte →</a>
@@ -114,17 +112,17 @@ function emailCodeDelivery(string $email, string $name, array $order, string $co
         <p style='margin:0.25rem 0;font-size:0.82rem;color:#374151'><strong>Pwodwi:</strong> {$order['product_name']} · {$order['package_label']}</p>
         <p style='margin:0.25rem 0;font-size:0.82rem;color:#374151'><strong>ID jwèt:</strong> {$order['game_uid']}</p>
       </div>
-      <p style='color:#6B7280;font-size:0.82rem;margin:0'>Pwoblèm ak kòd la? <a href='https://izitopop.com/pages/contact.html' style='color:#6C63FF'>Kontakte sipò nou an</a> ak nimewo kòmand ou.</p>";
+      <p style='color:#6B7280;font-size:0.82rem;margin:0'>Pwoblèm ak kòd la? <a href='https://izitopop.com/pages/contact.html' style='color:#6C63FF'>Kontakte sipò nou an</a>.</p>";
     sendEmail($email, $name, "⚡ Kòd {$order['product_name']} ou a — IziToPop", emailTemplate($body));
 }
 
 function emailPasswordReset(string $email, string $name, string $resetLink): void {
     $body = "
       <h2 style='color:#0F172A;margin:0 0 0.5rem'>Reset modpas ou 🔒</h2>
-      <p style='color:#6B7280;margin:0 0 1.5rem'>Bonjou {$name}, ou te mande pou reset modpas ou.</p>
+      <p style='color:#6B7280;margin:0 0 1.5rem'>Bonjou {$name}, klike bouton an pou kreye yon nouvo modpas.</p>
       <div style='text-align:center;margin:0 0 1.5rem'>
         <a href='{$resetLink}' style='background:#6C63FF;color:#fff;padding:0.875rem 2rem;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block'>Reset Modpas Mwen →</a>
       </div>
-      <p style='color:#9CA3AF;font-size:0.8rem;margin:0'>Lyen sa a ekspire nan 30 minit. Si ou pa te mande reset sa a, ignore email sa.</p>";
+      <p style='color:#9CA3AF;font-size:0.8rem;margin:0'>Lyen sa a ekspire nan 30 minit.</p>";
     sendEmail($email, $name, "Reset modpas ou — IziToPop", emailTemplate($body));
 }

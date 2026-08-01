@@ -1,57 +1,43 @@
 <?php
-// ═══════════════════════════════════════════
-// IziTopUp — Database & App Config
-// Replace DB_* values with your Hostinger credentials
-// ═══════════════════════════════════════════
+define('DB_HOST',    'localhost');
+define('DB_NAME',    'u589246572_izitopop');
+define('DB_USER',    'u589246572_izitopop');
+define('DB_PASS',    getenv('DB_PASS'));
+define('DB_CHARSET', 'utf8mb4');
 
-define('DB_HOST',     'localhost');
-define('DB_NAME',     'u589246572_izitopop');       // e.g. u123456789_izitopop
-define('DB_USER',     'u589246572_izitopop');       // e.g. u123456789_iziuser
-define('DB_PASS',     'Bh#&:FCPc$T9');
-define('DB_CHARSET',  'utf8mb4');
+define('APP_NAME', 'IziToPop');
+define('APP_URL',  'https://izitopop.com');
+define('API_URL',  'https://izitopop.com/api');
 
-define('APP_NAME',    'IziTopUp');
-define('APP_URL',     'https://izitopop.com');
-define('API_URL',     'https://izitopop.com/api');
+define('TOKEN_SECRET', getenv('TOKEN_SECRET'));
+define('TOKEN_EXPIRE', 60 * 60 * 24 * 30);
 
-// JWT / Token
-define('TOKEN_SECRET',  'f9189f76d79cdb59de64b5a1923aae7407d0a5eb7416cb2c5a2251682d5706a0');
-define('TOKEN_EXPIRE',  60 * 60 * 24 * 30); // 30 days in seconds
+define('POINTS_PER_REFERRAL', 50);
+define('POINTS_PER_DOLLAR',   10);
+define('POINTS_TO_HTG_RATE',  0.5);
 
-// Points config
-define('POINTS_PER_REFERRAL',   50);   // points earned when referred user buys
-define('POINTS_PER_DOLLAR',     10);   // points earned per $1 spent
-define('POINTS_TO_HTG_RATE',    0.5);  // 100 points = 50 HTG
+define('SMTP_HOST', 'smtp-relay.brevo.com');
+define('SMTP_PORT', 587);
+define('SMTP_USER', 'admin@izitopop.com');
+define('SMTP_PASS', getenv('BREVO_SMTP_PASS'));
+define('MAIL_FROM', 'admin@izitopop.com');
+define('MAIL_NAME', 'IziToPop');
 
-// Email (SMTP via Brevo/Mailgun)
-define('SMTP_HOST',   'smtp-relay.brevo.com');
-define('SMTP_PORT',   587);
-define('SMTP_USER',   'admin@izitopop.com');
-define('SMTP_PASS',   'xsmtpsib-bffbaa06fbf56dee2f95a84829c85db47b9eb95f3e8dc1b49bdd66709ec79ec1-EFi9arhmI10fMvby');
-define('MAIL_FROM',   'noreply@izitopop.com');
-define('MAIL_NAME',   'IziTopUp');
+define('MONCASH_CLIENT_ID', getenv('MONCASH_CLIENT_ID'));
+define('MONCASH_SECRET',    getenv('MONCASH_SECRET'));
+define('MONCASH_BASE_URL',  'https://moncashbutton.digicelhaiti.com');
 
-// MonCash API (Digicel)
-define('MONCASH_CLIENT_ID',     'YOUR_MONCASH_CLIENT_ID');
-define('MONCASH_SECRET',        'YOUR_MONCASH_SECRET');
-define('MONCASH_BASE_URL',      'https://moncashbutton.digicelhaiti.com'); // prod
-// define('MONCASH_BASE_URL',   'https://sandbox.moncashbutton.digicelhaiti.com'); // sandbox
+define('NATCASH_MERCHANT_ID', getenv('NATCASH_MERCHANT_ID'));
+define('NATCASH_API_KEY',     getenv('NATCASH_API_KEY'));
+define('NATCASH_BASE_URL',    'https://api.natcash.com');
 
-// NatCash API
-define('NATCASH_MERCHANT_ID',   'YOUR_NATCASH_MERCHANT_ID');
-define('NATCASH_API_KEY',       'YOUR_NATCASH_API_KEY');
-define('NATCASH_BASE_URL',      'https://api.natcash.com'); // update with real endpoint
+define('STRIPE_PUBLIC_KEY',     getenv('STRIPE_PUBLIC_KEY'));
+define('STRIPE_SECRET_KEY',     getenv('STRIPE_SECRET_KEY'));
+define('STRIPE_WEBHOOK_SECRET', getenv('STRIPE_WEBHOOK_SECRET'));
 
-// Stripe
-define('STRIPE_PUBLIC_KEY',     'pk_live_YOUR_STRIPE_PUBLIC_KEY');
-define('STRIPE_SECRET_KEY',     'sk_live_YOUR_STRIPE_SECRET_KEY');
-define('STRIPE_WEBHOOK_SECRET', 'whsec_YOUR_WEBHOOK_SECRET');
+define('APP_ENV',   'production');
+define('APP_DEBUG', false);
 
-// Environment
-define('APP_ENV',    'production'); // 'development' or 'production'
-define('APP_DEBUG',  false);
-
-// ── DB CONNECTION ──
 function getDB(): PDO {
     static $pdo = null;
     if ($pdo === null) {
