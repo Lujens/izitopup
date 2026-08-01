@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>FAQ — IziToPop</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236C63FF'/><text y='.9em' font-size='65' x='17'>⚡</text></svg>">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><div class="logo-icon">⚡</div>IziToPop</a>
+    <ul class="nav-links"><li><a href="../index.html#shop">Jwèt</a></li><li><a href="contact.html">Sipò</a></li></ul>
+    <div class="nav-actions">
+      <a href="../index.html" class="btn-ghost-nav">← Retounen</a>
+    </div>
+  </div>
+</nav>
+
+<div style="max-width:720px;margin:0 auto;padding:3rem 2rem">
+  <div style="text-align:center;margin-bottom:2.5rem">
+    <p class="section-eyebrow">Èd</p>
+    <h1 style="font-size:2rem;font-weight:800;color:var(--text);margin-top:0.4rem">Kesyon yo poze souvan</h1>
+    <p style="color:var(--muted);font-size:0.88rem;margin-top:0.5rem">Pa jwenn repons ou a? <a href="contact.html" style="color:var(--purple);font-weight:600">Kontakte nou dirèkteman.</a></p>
+  </div>
+
+  <div style="margin-bottom:2rem">
+    <p style="font-size:0.72rem;font-weight:700;color:var(--purple);letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem">🎮 Pwodwi & Livrezon</p>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Kòman livrezon kòd la mache? <span class="faq-arrow">▼</span></button><div class="faq-a">Apre peman konfime, sistèm nan otomatikman pran yon kòd disponib nan stock la epi voye li nan email ou. Li parèt tou sou ekran an touswit. Pa gen atant, pa gen entèmedyè — tout sa fèt an mwens ke 60 segonn.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Konbyen tan pou mwen resevwa kòd la? <span class="faq-arrow">▼</span></button><div class="faq-a">Livrezon se otomatik — an jeneral mwens ke 60 segonn apre peman konfime. Si ou pa resevwa li apre 5 minit, tcheke dosye spam email ou oswa wè kòd la nan dashboard ou.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Kisa ki pase si kòd la pa mache? <span class="faq-arrow">▼</span></button><div class="faq-a">Si kòd la pa fonksyonèl, kontakte sipò nou an ak nimewo kòmand ou ak yon screenshot. Nou pral verifye epi bay yon lòt kòd oswa ranbouse ou san pwoblèm nan mwens ke 24 èdtan.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Eske mwen ka wè kòd mwen achte yo ankò? <span class="faq-arrow">▼</span></button><div class="faq-a">Wi! Tout kòd ou resevwa yo sove nan dashboard ou sou kont ou. Ou ka wè yo nenpòt ki lè, menmsi ou bliye kopye yo nan premye fwa a.</div></div>
+  </div>
+
+  <div style="margin-bottom:2rem">
+    <p style="font-size:0.72rem;font-weight:700;color:var(--purple);letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem">💳 Peman</p>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Ki metòd peman nou aksepte? <span class="faq-arrow">▼</span></button><div class="faq-a">Nou aksepte MonCash (Digicel), NatCash (Natcom), ak kàt kredi/debi Visa ak Mastercard. Tout peman yo chiffre ak SSL 256-bit. Pa gen frè kache sou okenn tranzaksyon.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Peman mwen echwe — kisa pou mwen fè? <span class="faq-arrow">▼</span></button><div class="faq-a">Si peman ou echwe, kòmand la pa valide epi ou pa debite. Eseye ankò oswa itilize yon lòt metòd peman. Si pwoblèm nan kontinye, kontakte sipò nou an.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Eske gen frè kache? <span class="faq-arrow">▼</span></button><div class="faq-a">Non. Pri ou wè sou sit la se sa w ap peye a. Pa gen frè kache, pa gen frè tranzaksyon anplis.</div></div>
+  </div>
+
+  <div style="margin-bottom:2rem">
+    <p style="font-size:0.72rem;font-weight:700;color:var(--purple);letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem">🎁 Referans & Pwen</p>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Kijan sistèm referans la mache? <span class="faq-arrow">▼</span></button><div class="faq-a">Chak kont gen yon lyen referans pèsonèl. Lè yon zanmi enskri ak lyen ou epi fè premye acha li, ou touche pwen otomatikman. Ou ka wè tout referans ou yo nan dashboard ou.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Kòman pou mwen itilize pwen mwen yo? <span class="faq-arrow">▼</span></button><div class="faq-a">Ou ka konvèti pwen ou yo an kredi sou kont ou epi itilize yo pou peye yon pati nan pwochen acha ou. 100 pwen = $0.50 rabè.</div></div>
+  </div>
+
+  <div style="text-align:center;background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:2rem">
+    <div style="font-size:1.5rem;margin-bottom:0.75rem">💬</div>
+    <h3 style="font-weight:700;font-size:1rem;color:var(--text);margin-bottom:0.4rem">Pa jwenn repons ou a?</h3>
+    <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1.25rem">Ekip sipò nou an disponib 7j/7 pou ede ou.</p>
+    <a href="contact.html" class="btn-primary" style="display:inline-flex">Kontakte nou →</a>
+  </div>
+</div>
+
+<script>
+function toggleFaq(btn){const a=btn.nextElementSibling,open=btn.classList.contains("open");document.querySelectorAll(".faq-q.open").forEach(b=>{b.classList.remove("open");b.nextElementSibling.classList.remove("open");});if(!open){btn.classList.add("open");a.classList.add("open");}}
+</script>
+</body>
+</html>

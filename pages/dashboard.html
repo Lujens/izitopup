@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Dashboard — IziToPop</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236C63FF'/><text y='.9em' font-size='65' x='17'>⚡</text></svg>">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><div class="logo-icon">⚡</div>IziToPop</a>
+    <ul class="nav-links"><li><a href="../index.html#shop">Boutik</a></li></ul>
+    <div class="nav-actions">
+      <a href="../index.html" class="btn-ghost-nav">← Retounen</a>
+      <a href="../index.html#shop" class="btn-nav-primary" style="text-decoration:none;display:inline-block">Achte</a>
+    </div>
+  </div>
+</nav>
+
+<div class="dash-layout">
+  <aside class="sidebar">
+    <div class="sidebar-user">
+      <div class="avatar">WP</div>
+      <div class="sidebar-name">Wesley Pierre</div>
+      <div class="sidebar-email">wesley@email.com</div>
+    </div>
+    <nav class="sidebar-nav" style="margin-top:0.75rem">
+      <a href="#" class="active">📊 Dashboard</a>
+      <a href="#">🛍️ Kòmand mwen</a>
+      <a href="#">💎 Bous mwen</a>
+      <a href="#">⭐ Pwen mwen</a>
+      <a href="#">🎁 Referans</a>
+      <a href="#">🔔 Anviwonman</a>
+      <a href="contact.html">💬 De kontakte</a>
+      <a href="../index.html" style="color:var(--red);margin-top:1rem">🚪 Dekonekte</a>
+    </nav>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-greeting">Bonjou, Wesley! 👋</div>
+    <div class="dash-sub">Men sa k ap pase jodi a.</div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">💰</div>
+        <div class="stat-value">$12.50</div>
+        <div class="stat-label">Bous mwen</div>
+        <div class="stat-trend">↑ +$2.50 semèn sa</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-value">250</div>
+        <div class="stat-label">Pwen mwen</div>
+        <div class="stat-trend">↑ +50 pwen jodi a</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🛍️</div>
+        <div class="stat-value">18</div>
+        <div class="stat-label">Kòmand total</div>
+        <div class="stat-trend">↑ +3 mwa sa</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">💳</div>
+        <div class="stat-value">$87.45</div>
+        <div class="stat-label">Total depanse</div>
+        <div class="stat-trend">Sou 3 dènye mwa</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.25rem">
+      <!-- Recent Orders -->
+      <div class="dash-card" style="grid-column:1/-1">
+        <div class="dash-card-header">
+          <span class="dash-card-title">Dènye kòmand yo</span>
+          <a href="#" style="font-size:0.78rem;color:var(--purple);font-weight:600">Wè tout →</a>
+        </div>
+        <table class="orders-table">
+          <thead><tr>
+            <th>Jwèt</th><th>Pake</th><th>Metòd</th><th>Pri</th><th>Estati</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td><div class="game-cell"><div class="game-cell-thumb"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1rgi.jpg" onerror="this.parentElement.textContent='🔥'"></div>Free Fire</div></td>
+              <td>520 Dyaman</td><td>MonCash</td><td>$4.99</td>
+              <td><span class="status-pill status-livre">Livre</span></td>
+            </tr>
+            <tr>
+              <td><div class="game-cell"><div class="game-cell-thumb"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1wkb.jpg" onerror="this.parentElement.textContent='🎯'"></div>PUBG Mobile</div></td>
+              <td>60 UC</td><td>NatCash</td><td>$0.99</td>
+              <td><span class="status-pill status-livre">Livre</span></td>
+            </tr>
+            <tr>
+              <td><div class="game-cell"><div class="game-cell-thumb"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1ycw.jpg" onerror="this.parentElement.textContent='🏰'"></div>Clash of Clans</div></td>
+              <td>$10 Pack</td><td>Kàt</td><td>$10.99</td>
+              <td><span class="status-pill status-livre">Livre</span></td>
+            </tr>
+            <tr>
+              <td><div class="game-cell"><div class="game-cell-thumb">🎮</div>Steam</div></td>
+              <td>$10 Gift Card</td><td>Kàt</td><td>$10.99</td>
+              <td><span class="status-pill status-livre">Livre</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Referral -->
+    <div class="dash-card">
+      <div class="dash-card-header">
+        <span class="dash-card-title">🎁 Referans mwen</span>
+        <span style="font-size:0.75rem;color:var(--muted)">12 envite · 7 acha · 250 pwen touche</span>
+      </div>
+      <div style="padding:1.25rem">
+        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.875rem">Pataje lyen ou epi touche pwen pou chak zanmi ki enskri epi achte.</p>
+        <div class="ref-link-card">
+          <div class="ref-link-url">https://izitopop.ht/ref/wesley</div>
+          <button onclick="navigator.clipboard.writeText('https://izitopop.ht/ref/wesley')" style="background:var(--purple);color:#fff;border:none;padding:0.45rem 1rem;border-radius:8px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap">Kopye</button>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem">
+          <div style="text-align:center;padding:0.875rem;background:var(--bg);border-radius:10px">
+            <div style="font-weight:800;font-size:1.3rem;color:var(--text)">12</div>
+            <div style="font-size:0.72rem;color:var(--muted)">Zanmi envite</div>
+          </div>
+          <div style="text-align:center;padding:0.875rem;background:var(--bg);border-radius:10px">
+            <div style="font-weight:800;font-size:1.3rem;color:var(--text)">7</div>
+            <div style="font-size:0.72rem;color:var(--muted)">Acha konplète</div>
+          </div>
+          <div style="text-align:center;padding:0.875rem;background:var(--bg);border-radius:10px">
+            <div style="font-weight:800;font-size:1.3rem;color:var(--purple)">250</div>
+            <div style="font-size:0.72rem;color:var(--muted)">Pwen touche</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

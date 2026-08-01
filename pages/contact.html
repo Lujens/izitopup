@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Sipò — IziToPop</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236C63FF'/><text y='.9em' font-size='65' x='17'>⚡</text></svg>">
+  <style>
+    .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;max-width:900px;margin:0 auto;padding:3rem 2rem}
+    .channel{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem;text-decoration:none;transition:all 0.2s}
+    .channel:hover{border-color:var(--purple);box-shadow:var(--shadow2)}
+    .ch-icon{width:40px;height:40px;border-radius:10px;background:var(--purple3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .ch-name{font-weight:600;font-size:0.88rem;color:var(--text)}
+    .ch-sub{font-size:0.72rem;color:var(--muted)}
+    .ch-avail{font-size:0.65rem;color:var(--green);font-weight:700;background:#ECFDF5;padding:2px 7px;border-radius:5px;margin-left:auto;white-space:nowrap}
+    @media(max-width:650px){.contact-grid{grid-template-columns:1fr;gap:2rem}}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><div class="logo-icon">⚡</div>IziToPop</a>
+    <ul class="nav-links"><li><a href="../index.html#shop">Jwèt</a></li><li><a href="faq.html">FAQ</a></li></ul>
+    <div class="nav-actions"><a href="../index.html" class="btn-ghost-nav">← Retounen</a></div>
+  </div>
+</nav>
+
+<div class="contact-grid">
+  <div>
+    <p class="section-eyebrow" style="margin-bottom:0.6rem">Sipò</p>
+    <h1 style="font-size:1.75rem;font-weight:800;color:var(--text);margin-bottom:0.75rem">Nou la pou ou 👋</h1>
+    <p style="color:var(--muted);font-size:0.88rem;line-height:1.75;margin-bottom:1.5rem">Ekip sipò nou an disponib 7j/7 pou reponn kesyon ou yo ak rezoud pwoblèm ou yo rapidman.</p>
+
+    <a href="mailto:support@izitopop.com" class="channel">
+      <div class="ch-icon">📧</div>
+      <div><div class="ch-name">Email nou</div><div class="ch-sub">support@izitopop.com</div></div>
+      <span class="ch-avail">24h repons</span>
+    </a>
+    <a href="https://wa.me/50900000000" class="channel" target="_blank">
+      <div class="ch-icon">💬</div>
+      <div><div class="ch-name">WhatsApp</div><div class="ch-sub">+509 XX XX XXXX</div></div>
+      <span class="ch-avail">Disponib 24/7</span>
+    </a>
+    <a href="#" class="channel">
+      <div class="ch-icon" style="background:#EFF6FF">💙</div>
+      <div><div class="ch-name">Live Chat</div><div class="ch-sub">Chat ak yon ajan</div></div>
+      <span class="ch-avail">Disponib 24/7</span>
+    </a>
+
+    <div style="background:var(--purple4);border:1.5px solid rgba(108,99,255,0.2);border-radius:12px;padding:1rem 1.25rem;margin-top:1rem">
+      <p style="font-size:0.78rem;color:var(--muted);line-height:1.65">💡 <strong style="color:var(--text)">Tip:</strong> Pou pwoblèm kòmand, toujou gen nimewo kòmand ou (#IZI-XXXXX) prè — sa ap ede nou rezoud pwoblèm ou pi vit.</p>
+    </div>
+  </div>
+
+  <div style="background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:1.75rem">
+    <h3 style="font-weight:700;font-size:1.05rem;color:var(--text);margin-bottom:1.25rem">Voye yon mesaj</h3>
+    <div id="formArea">
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Non</label><input class="form-input" type="text" placeholder="Prenon ou"></div>
+        <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="ou@email.com"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Nimewo kòmand (si aplikab)</label><input class="form-input" type="text" placeholder="#IZI-00000"></div>
+      <div class="form-group"><label class="form-label">Sijè</label>
+        <select class="form-input" style="cursor:pointer">
+          <option value="">Chwazi yon sijè...</option>
+          <option>Pwoblèm ak kòd mwen</option>
+          <option>Kòmand pa livre</option>
+          <option>Pwoblèm peman</option>
+          <option>Kesyon sou pwodwi</option>
+          <option>Lòt</option>
+        </select>
+      </div>
+      <div class="form-group"><label class="form-label">Mesaj ou</label><textarea class="form-input" rows="4" placeholder="Eksplike pwoblèm ou..." style="resize:vertical"></textarea></div>
+      <button class="btn-full btn-purple" onclick="submitForm()">Voye mesaj →</button>
+    </div>
+    <div id="successMsg" style="display:none;text-align:center;padding:2rem 0">
+      <div style="font-size:2.5rem;margin-bottom:1rem">✅</div>
+      <h3 style="font-weight:700;margin-bottom:0.4rem">Mesaj ou resevwa!</h3>
+      <p style="color:var(--muted);font-size:0.83rem">Nou pral reponn ou nan mwens ke 24h.</p>
+      <a href="../index.html#shop" class="btn-outline" style="display:inline-flex;margin-top:1.25rem">← Retounen nan boutik</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function submitForm(){document.getElementById("formArea").style.display="none";document.getElementById("successMsg").style.display="block";}
+</script>
+</body>
+</html>

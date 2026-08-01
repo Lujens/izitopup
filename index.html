@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>IziToPop — Top-up jwèt ou an 60 segonn</title>
+  <meta name="description" content="Achte diamonds Free Fire, UC PUBG, V-Bucks Fortnite ak MonCash ak NatCash. Livrezon otomatik an mwens ke 60 segonn.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236C63FF'/><text y='.9em' font-size='65' x='17'>⚡</text></svg>">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">⚡</div>
+      IziToPop
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Akèy</a></li>
+      <li><a href="#shop">Jwèt</a></li>
+      <li><a href="#how">Kijan sa mache</a></li>
+      <li><a href="pages/faq.html">FAQ</a></li>
+      <li><a href="pages/contact.html">Sipò</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#" class="btn-ghost-nav" onclick="openLogin();return false;">Konekte</a>
+      <button class="btn-nav-primary" onclick="openRegister()">Kreye Kont</button>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#shop" onclick="toggleMenu()">🎮 Jwèt</a>
+  <a href="#how" onclick="toggleMenu()">❓ Kijan sa mache</a>
+  <a href="pages/faq.html">📋 FAQ</a>
+  <a href="pages/contact.html">💬 Sipò</a>
+  <a href="#" onclick="openLogin();toggleMenu();return false;" style="color:var(--purple);font-weight:600">→ Konekte</a>
+  <a href="#" onclick="openRegister();toggleMenu();return false;" style="color:var(--purple);font-weight:600">→ Kreye Kont Gratis</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow"><span></span> Top-up instantane</div>
+      <h1>Top-up jwèt ou<br>an <span class="hl">60 segonn</span></h1>
+      <p class="hero-sub">Achte dyaman, UC, gold ak gift cards pi rapid, pi fasil, pi an sekirite. MonCash, NatCash, oswa kàt — ou chwazi.</p>
+      <div class="hero-btns">
+        <a href="#shop" class="btn-primary">Top-up kounya →</a>
+        <a href="#shop" class="btn-outline">Gade jwèt yo</a>
+      </div>
+      <div class="hero-trust">
+        <span class="trust-item"><span class="trust-check">✓</span> Livrezon 60 segonn</span>
+        <span class="trust-item"><span class="trust-check">✓</span> Peman sécurisé</span>
+        <span class="trust-item"><span class="trust-check">✓</span> Sipò 24/7</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-placeholder"></div>
+      <div class="hero-float-card card1">
+        <div class="float-icon">✅</div>
+        <div>
+          <div class="float-title">Top-up réussi</div>
+          <div class="float-sub">Free Fire · 520 Dyaman</div>
+          <span class="float-badge">60 segonn</span>
+        </div>
+      </div>
+      <div class="hero-float-card card2">
+        <div class="float-icon">🔒</div>
+        <div>
+          <div class="float-title">Peman sécurisé</div>
+          <div class="float-sub">MonCash · Visa · Mastercard</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAMES -->
+<section class="section games-section" id="shop">
+  <div class="section-inner">
+    <div class="games-header">
+      <h2>Popilè nan IziToPop</h2>
+      <a href="#" class="see-all">Wè tout jwèt →</a>
+    </div>
+    <div class="cats-bar">
+      <button class="cat-pill active" onclick="filterCat('all',this)">🎮 Tout</button>
+      <button class="cat-pill" onclick="filterCat('Dyaman',this)">💎 Dyaman</button>
+      <button class="cat-pill" onclick="filterCat('UC',this)">⚔️ UC</button>
+      <button class="cat-pill" onclick="filterCat('V-Bucks',this)">⚡ V-Bucks</button>
+      <button class="cat-pill" onclick="filterCat('CP',this)">🔫 CP Points</button>
+      <button class="cat-pill" onclick="filterCat('Gift',this)">🎁 Gift Cards</button>
+    </div>
+    <div class="games-grid" id="gamesGrid"></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how-section" id="how">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-eyebrow">Pwosesis</p>
+      <h2 class="section-title">Kijan sa mache?</h2>
+      <p class="section-sub">4 etap senp pou resevwa top-up ou an mwens ke yon minit</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-num">1</span>
+        <div class="step-icon-wrap">🎮</div>
+        <div class="step-title">Chwazi jwèt ou</div>
+        <div class="step-desc">Chwazi jwèt ou epi pake ou vle achte a.</div>
+      </div>
+      <div class="step-card">
+        <span class="step-num">2</span>
+        <div class="step-icon-wrap">👤</div>
+        <div class="step-title">Antre ID ou</div>
+        <div class="step-desc">Mete ID jwèt ou pou nou ka livrezon kòrèkteman.</div>
+      </div>
+      <div class="step-card">
+        <span class="step-num">3</span>
+        <div class="step-icon-wrap">💳</div>
+        <div class="step-title">Peye an sekirite</div>
+        <div class="step-desc">Peye ak MonCash, NatCash oswa kàt kredi/debi.</div>
+      </div>
+      <div class="step-card">
+        <span class="step-num">4</span>
+        <div class="step-icon-wrap">⚡</div>
+        <div class="step-title">Resevwa kòd ou</div>
+        <div class="step-desc">W ap resevwa top-up ou nan 60 segonn garanti.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="section payment-section">
+  <div class="section-inner">
+    <div class="payment-layout">
+      <div class="payment-text">
+        <p class="section-eyebrow" style="text-align:left;margin-bottom:0.6rem">Peman</p>
+        <h2>Peye jan ou vle</h2>
+        <p style="margin-top:0.75rem">Nou aksepte MonCash, NatCash ak kàt entènasyonal. Tout tranzaksyon yo chiffre ak SSL 256-bit — done ou yo toujou pwoteje.</p>
+        <div style="display:flex;align-items:center;gap:0.4rem;margin-top:1.25rem;font-size:0.78rem;color:var(--muted)">
+          🔒 Pa gen frè kache · Peman 100% sécurisé
+        </div>
+      </div>
+      <div class="pm-list">
+        <div class="pm-row">
+          <div class="pm-logo pm-mc">MC</div>
+          <div class="pm-info">
+            <div class="pm-name">MonCash</div>
+            <div class="pm-sub">Peman mobil Digicel · Haïti</div>
+          </div>
+          <span class="pm-badge">LIVE</span>
+        </div>
+        <div class="pm-row">
+          <div class="pm-logo pm-nc">NC</div>
+          <div class="pm-info">
+            <div class="pm-name">NatCash</div>
+            <div class="pm-sub">Peman mobil Natcom · Haïti</div>
+          </div>
+          <span class="pm-badge">LIVE</span>
+        </div>
+        <div class="pm-row">
+          <div class="pm-logo pm-card-bg">💳</div>
+          <div class="pm-info">
+            <div class="pm-name">Kàt Kredi / Debi</div>
+            <div class="pm-sub">Visa · Mastercard · International</div>
+          </div>
+          <span class="pm-badge">LIVE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section features-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-eyebrow">Avantaj</p>
+      <h2 class="section-title">Poukisa chwazi IziToPop?</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon">⚡</div>
+        <div class="feat-title">Top-up instantane</div>
+        <div class="feat-desc">Nou ofri top-up ou an 60 segonn apre peman konfime — 24h/24, 7j/7.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔒</div>
+        <div class="feat-title">100% Sécurisé</div>
+        <div class="feat-desc">Tranzaksyon yo chiffre ak done w yo an sekirite ak sistèm nou an.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">💰</div>
+        <div class="feat-title">Pi bon pri</div>
+        <div class="feat-desc">Nou ofri pi bon pri sou mache a. Pa gen frè kache sou okenn tranzaksyon.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🎧</div>
+        <div class="feat-title">Sèvis kliyan 24/7</div>
+        <div class="feat-desc">Nou la pou ou tan, nenpòt ki pwoblèm ou ta jwenn sou platfòm nou an.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🎁</div>
+        <div class="feat-title">Sistèm referans</div>
+        <div class="feat-desc">Envite zanmi touche pwen epi itilize yo pou rabè sou pwochen acha ou.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📱</div>
+        <div class="feat-title">Mobil-first</div>
+        <div class="feat-desc">Optimize pou telefòn — menm eksperyans rapid sou nenpòt aparèy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRAL -->
+<section class="ref-section">
+  <div class="ref-inner">
+    <div class="ref-text">
+      <h2>Envite zanmi w yo epi touche! 🎁</h2>
+      <p>Pataje lyen ou, zanmi w ap jwenn bonus, ou menm w ap touche pwen pou chak referans ki fèt. Pi ou refere, pi ou ekonomize.</p>
+      <button class="btn-ref" onclick="openRegister()">Kòmanse kounya →</button>
+    </div>
+    <div class="ref-steps">
+      <div class="ref-step">
+        <div class="ref-step-num">1</div>
+        <div class="ref-step-text">Pataje lyen referans pèsonèl ou</div>
+      </div>
+      <div class="ref-step">
+        <div class="ref-step-num">2</div>
+        <div class="ref-step-text">Zanmi ou enskri ak lyen an</div>
+      </div>
+      <div class="ref-step">
+        <div class="ref-step-num">3</div>
+        <div class="ref-step-text">Zanmi w fè premye acha li</div>
+      </div>
+      <div class="ref-step">
+        <div class="ref-step-num">4</div>
+        <div class="ref-step-text">Ou touche pwen bonus otomatikman</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="logo-icon">⚡</div> IziToPop</a>
+        <p>Top-up jwèt ou an 60 segonn. MonCash, NatCash ak kàt entènasyonal aksepte.</p>
+        <div class="footer-socials">
+          <button class="social-btn">f</button>
+          <button class="social-btn">ig</button>
+          <button class="social-btn">tk</button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Eksplore</h4>
+        <a href="#">Akèy</a>
+        <a href="#shop">Jwèt yo</a>
+        <a href="#how">Kijan sa mache</a>
+        <a href="pages/faq.html">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kont</h4>
+        <a href="#" onclick="openLogin();return false;">Konekte</a>
+        <a href="#" onclick="openRegister();return false;">Kreye Kont</a>
+        <a href="pages/dashboard.html">Dashboard</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="pages/contact.html">Sipò kliyan</a>
+        <a href="#">support@izitopop.com</a>
+        <a href="#">WhatsApp</a>
+        <a href="#">+509 XX XX XXXX</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 IziToPop · Developed by <a href="https://lujensp.com" style="color:var(--purple)">LujensP LLC</a> · Tout dwa rezève</p>
+      <div style="display:flex;gap:1rem">
+        <a href="pages/terms.html" style="font-size:0.75rem;color:var(--muted)">Kondisyon</a>
+        <a href="pages/privacy.html" style="font-size:0.75rem;color:var(--muted)">Konfidansyalite</a>
+        <a href="pages/refund.html" style="font-size:0.75rem;color:var(--muted)">Ranbousman</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════ MODALS ═══════════ -->
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Chwazi pake ou</span>
+      <button class="modal-close" onclick="closeModal('productModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="product-header">
+        <div class="product-cover" id="productCover">🎮</div>
+        <div>
+          <div class="product-modal-name" id="productName">Free Fire</div>
+          <div class="product-modal-sub" id="productSub">Dyaman · Livrezon otomatik ⚡</div>
+        </div>
+      </div>
+      <p class="pkg-label">Chwazi pake ou</p>
+      <div class="packages-grid" id="packagesGrid"></div>
+      <div class="uid-section">
+        <div class="form-group" style="margin-bottom:0">
+          <label class="form-label" id="uidLabel">ID jwèt</label>
+          <input class="form-input" type="text" id="uidInput" placeholder="Antre ID ou">
+        </div>
+      </div>
+      <div class="order-summary-card" id="orderSummaryCard" style="display:none;margin-top:1rem">
+        <div class="order-row"><span>Jwèt</span><span id="sumGame" style="color:var(--text);font-weight:500"></span></div>
+        <div class="order-row"><span>Pake</span><span id="sumPkg" style="color:var(--text);font-weight:500"></span></div>
+        <div class="order-row total"><span>Total</span><span id="sumTotal"></span></div>
+      </div>
+      <button class="btn-full btn-purple" style="margin-top:1.25rem" onclick="proceedCheckout()">Kontinye →</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Chwazi metòd peman w</span>
+      <button class="modal-close" onclick="closeModal('checkoutModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="pay-tabs">
+        <button class="pay-tab active" data-method="moncash" onclick="setPayTab('moncash')">MonCash</button>
+        <button class="pay-tab" data-method="natcash" onclick="setPayTab('natcash')">NatCash</button>
+        <button class="pay-tab" data-method="card" onclick="setPayTab('card')">Kàt</button>
+      </div>
+      <div id="payFields"></div>
+      <div class="order-summary-card">
+        <div class="order-row"><span>Jwèt</span><span id="checkSumGame" style="color:var(--text);font-weight:500"></span></div>
+        <div class="order-row"><span>Pake</span><span id="checkSumPkg" style="color:var(--text);font-weight:500"></span></div>
+        <div class="order-row"><span>Metòd peman</span><span id="checkSumMethod" style="color:var(--text);font-weight:500"></span></div>
+        <div class="order-row total"><span>Total</span><span id="checkSumTotal"></span></div>
+      </div>
+      <button class="btn-full btn-purple" id="payBtn" onclick="confirmPay()">💳 Peye kounye a</button>
+      <p style="text-align:center;font-size:0.72rem;color:var(--muted);margin-top:0.75rem">🔒 Peman sécurisé SSL 256-bit · Kòd livre touswit</p>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal">
+    <div class="modal-body">
+      <div class="success-wrap">
+        <div class="success-check">✅</div>
+        <h2 style="font-weight:800;font-size:1.3rem;color:var(--text);margin-bottom:0.4rem">Top-up fèt ak siksè!</h2>
+        <p style="color:var(--muted);font-size:0.83rem;margin-bottom:0" id="successGame"></p>
+        <div class="code-display">
+          <div class="code-label">Kòd ou an</div>
+          <div class="code-value" id="successCode">ABCD-1234-EFGH-5678</div>
+          <button class="btn-copy" onclick="copyCode()">📋 Kopye</button>
+        </div>
+        <div class="order-summary-card" style="text-align:left">
+          <div class="order-row"><span>Pri</span><span id="successPrice" style="color:var(--text);font-weight:600"></span></div>
+          <div class="order-row"><span>Metòd peman</span><span id="successMethod" style="color:var(--text);font-weight:500"></span></div>
+          <div class="order-row" style="margin-bottom:0"><span>Dat</span><span id="successDate" style="color:var(--text);font-weight:500"></span></div>
+        </div>
+        <p style="font-size:0.75rem;color:var(--muted);margin-bottom:1.25rem">📧 Kòd la voye nan email ou tou. Tcheke spam si ou pa jwenn li.</p>
+        <div style="display:flex;gap:0.75rem">
+          <button class="btn-full btn-purple" onclick="closeModal('successModal')">🎮 Fè yon lòt acha</button>
+          <a href="pages/dashboard.html" class="btn-full btn-white" style="display:flex;align-items:center;justify-content:center;text-decoration:none">Dashboard →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Konekte</span>
+      <button class="modal-close" onclick="closeModal('loginModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="social-login" style="margin-bottom:1rem">
+        <button class="social-login-btn">G Google</button>
+        <button class="social-login-btn">f Facebook</button>
+      </div>
+      <div class="divider">oswa</div>
+      <div class="form-group"><label class="form-label">Email oswa nimewo telefòn</label><input class="form-input" type="email" placeholder="ou@email.com"></div>
+      <div class="form-group"><label class="form-label" style="display:flex;justify-content:space-between">Modpas <a href="#" class="form-link" style="font-weight:500;font-size:0.75rem">Bliye modpas?</a></label><input class="form-input" type="password" placeholder="••••••••"></div>
+      <button class="btn-full btn-purple" onclick="handleLogin()">Konekte</button>
+      <div class="form-footer">Pa gen kont? <a href="#" class="form-link" onclick="openRegister();return false;">Kreye youn gratis</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div class="modal-overlay" id="registerModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Kreye kont gratis</span>
+      <button class="modal-close" onclick="closeModal('registerModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="social-login" style="margin-bottom:1rem">
+        <button class="social-login-btn">G Google</button>
+        <button class="social-login-btn">f Facebook</button>
+      </div>
+      <div class="divider">oswa</div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Non</label><input class="form-input" type="text" placeholder="Prenon"></div>
+        <div class="form-group"><label class="form-label">Siyati</label><input class="form-input" type="text" placeholder="Siyati"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="ou@email.com"></div>
+      <div class="form-group"><label class="form-label">Nimewo telefòn</label><input class="form-input" type="tel" placeholder="+509 XX XX XXXX"></div>
+      <div class="form-group"><label class="form-label">Modpas</label><input class="form-input" type="password" placeholder="Min. 8 karaktè"></div>
+      <div class="form-group"><label class="form-label">Kòd referans (opsyonèl)</label><input class="form-input" type="text" placeholder="Kòd zanmi ou (opsyonèl)"></div>
+      <button class="btn-full btn-purple" onclick="handleRegister()">Kreye kont mwen gratis →</button>
+      <div class="form-footer">Gen kont deja? <a href="#" class="form-link" onclick="openLogin();return false;">Konekte</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span id="toastIcon">✅</span>
+  <span class="toast-text" id="toastText">Done!</span>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
